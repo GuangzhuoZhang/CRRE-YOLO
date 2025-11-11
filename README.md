@@ -28,36 +28,25 @@ All experiments were conducted on a local computer with the following configurat
 
 All models were trained and validated on this local machine.
 
+---
+
 ### 2.1 Python Dependencies
 
 Install the required Python packages with:
 
 ```bash
 pip install -r requirements.txt
-您可以根据本地设置调整 requirements.txt，但其中列出的版本与本文中描述的环境一致。
+```
 
-3. 可重复性设置
-为确保可重复性，所有实验都使用以下设置：
+You may adjust `requirements.txt` according to your local setup, but the versions listed there are consistent with the environment described in the paper.
 
-使用固定的随机种子：
+---
 
-python
-复制
-编辑
-seed = 0
-种子应用于：
+## 3. Reproducibility Settings
 
-Python 随机
+To ensure reproducibility, the following settings are used throughout all experiments:
 
-数字
-
-PyTorch
-
-启用 PyTorch 确定性模式，例如：
-
-python
-复制
-编辑
+```python
 import torch
 import numpy as np
 import random
@@ -69,59 +58,63 @@ torch.manual_seed(seed)
 torch.cuda.manual_seed_all(seed)
 torch.backends.cudnn.deterministic = True
 torch.backends.cudnn.benchmark = False
-关键训练设置包括：
+```
 
-输入大小：640 × 640
+**Training parameters:**
+- Input size: 640 × 640  
+- Batch size: 4  
+- Epochs: 200  
 
-批量大小（训练）：4
+These settings correspond to Section 2.3 of the paper.
 
-纪元数：200
+---
 
-这些细节对应于论文的第 2.3 节（实验平台和参数设置）。
+## 4. Training
 
-4. 培训
-运行主训练脚本：
+Run the main training script:
 
-bash
-复制
-编辑
+```bash
 python train.py
-或者使用显式参数：
+```
 
-bash
-复制
-编辑
+Or with explicit arguments:
+
+```bash
 python train.py --img 640 --batch 4 --epochs 200
-确保在 train.py 或 config.yaml 中正确设置数据集路径。
+```
 
-5. 推理
-训练后，使用以下命令运行推理：
+Ensure dataset paths are correctly set in `train.py` or `config.yaml`.
 
-bash
-复制
-编辑
+---
+
+## 5. Inference
+
+After training, perform inference using:
+
+```bash
 python detect.py --weights runs/train/exp/weights/best.pt --source ./test_images --img 640
-（根据您自己的实现调整脚本名称和参数。
+```
 
-6. 推理速度
-推理性能（单张图片）：
+Adapt the script name and arguments to your own implementation.
 
-批量大小：1
+---
 
-平均延迟： 每张图像 3.0 毫秒
+## 6. Inference Speed
 
-0.2 毫秒预处理
+Single-image inference (batch = 1):
 
-2.0 毫秒推理
+- **Average Latency:** 3.0 ms per image  
+  - 0.2 ms preprocessing  
+  - 2.0 ms inference  
+  - 0.8 ms post-processing  
 
-0.8 毫秒后处理
+Measured using the built-in profiler of the Ultralytics YOLO framework.
 
-使用 Ultralytics YOLO 框架的内置分析器进行测量。
+---
 
-7. 存储库结构
-text
-复制
-编辑
+## 7. Repository Structure
+
+```text
 CRRE-YOLO/
 ├── train.py
 ├── detect.py
@@ -129,31 +122,36 @@ CRRE-YOLO/
 ├── requirements.txt
 ├── README.md
 └── weights/
-8. 数据
-本研究中使用的水稻害虫数据集可根据通讯作者的合理要求提供。
+```
 
-9. 引用
-如果您使用此存储库，请引用：
+---
 
-bibtex
-复制
-编辑
+## 8. Data
+
+The rice pest dataset used in this study is available upon reasonable request from the corresponding author.
+
+---
+
+## 9. Citation
+
+```bibtex
 @article{crre-yolo-2025,
   title   = {CRRE-YOLO: An Enhanced YOLOv11 Model with Efficient Local Attention and Multi-Scale Convolution for Rice Pest Detection},
-  author  = {[Your Name] and [Co-authors]},
+  author  = {Guangzhuo Zhang and Co-authors},
   journal = {Applied Sciences},
   year    = {2025},
   note    = {under review}
 }
-10. 许可
-该项目根据 MIT 许可证发布。
+```
 
-text
-复制
-编辑
+---
+
+## 10. License
+
+```text
 MIT License
 
-Copyright (c) 2025 [Your Name]
+Copyright (c) 2025 Guangzhuo Zhang
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -167,8 +165,5 @@ copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+```
