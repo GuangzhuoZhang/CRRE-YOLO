@@ -6,7 +6,7 @@ Convolution for Rice Pest Detection** *(Submitted to Applied Sciences (MDPI), 20
 repository contains the training script, configuration, and environment settings necessary to
 reproduce the experimental results reported in Section 2.3 (Experimental Platform and Parameter
 Settings) of the manuscript.
-## 2. Environment All experiments were conducted on a local computer with the following
+## 2. Environment All experiments were conducted on a local computer with the following.
 configuration: - OS: Windows 11 - CPU: Intel Core i5-14600KF - RAM: 32 GB - GPU: NVIDIA
 GeForce RTX 5060 Ti (16 GB VRAM) - Python: 3.10.18 - PyTorch: 2.7.1 - CUDA: 12.8
 All models were trained and validated on this local machine.
@@ -20,14 +20,14 @@ size: 4, Epochs: 200
 --img 640 ```
 ## 6. Inference Speed Single-image inference (batch=1): - Avg latency: 3.0 ms (0.2 ms
 preprocessing, 2.0 ms inference, 0.8 ms post-processing)
-## 7. Repository Structure CRRE-YOLO/ ■■■ train.py ■■■ detect.py ■■■ config.yaml ■■■
+## 7. Repository Structure CRRE-YOLO/ ■■■ train.py ■■■ detect.py ■■■ config.yaml ■■■.
 requirements.txt ■■■ README.md ■■■ weights/
-## 8. Data The rice pest dataset is available from the corresponding author upon reasonable
+## 8. Data The rice pest dataset is available from the corresponding author upon reasonable.
 request.
-## 9. Citation ``` @article{crre-yolo-2025, title = {CRRE-YOLO: An Enhanced YOLOv11 Model with
+## 9. Citation ``` @article{crre-yolo-2025, title = {CRRE-YOLO: An Enhanced YOLOv11 Model with.
 Efficient Local Attention and Multi-Scale Convolution for Rice Pest Detection}, author = {Guangzhuo
 Zhang and Co-authors}, journal = {Applied Sciences}, year = {2025}, note = {under review} } ```
-## 10. License MIT License Copyright (c) 2025 Guangzhuo Zhang
+## 10. License MIT License Copyright (c) 2025 Guangzhuo Zhang.
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
 associated documentation files (the "Software"), to deal in the Software without restriction, including
 without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
