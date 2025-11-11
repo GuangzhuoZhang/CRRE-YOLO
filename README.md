@@ -2,7 +2,7 @@
 This repository provides the official implementation and training scripts for our paper:
 **CRRE-YOLO: An Enhanced YOLOv11 Model with Efficient Local Attention and Multi-Scale
 Convolution for Rice Pest Detection** *(Submitted to Applied Sciences (MDPI), 2025)*
-## 1. Overview This project implements the CRRE-YOLO model described in the paper. The
+## 1. Overview This project implements the CRRE-YOLO model described in the paper.
 repository contains the training script, configuration, and environment settings necessary to
 reproduce the experimental results reported in Section 2.3 (Experimental Platform and Parameter
 Settings) of the manuscript.
