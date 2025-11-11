@@ -95,8 +95,6 @@ After training, perform inference using:
 python detect.py --weights runs/train/exp/weights/best.pt --source ./test_images --img 640
 ```
 
-Adapt the script name and arguments to your own implementation.
-
 ---
 
 ## 6. Inference Speed
