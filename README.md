@@ -114,12 +114,15 @@ Measured using the built-in profiler of the Ultralytics YOLO framework.
 
 ```text
 CRRE-YOLO/
-├── train.py
-├── detect.py
-├── config.yaml
-├── requirements.txt
+├── tests/
+├── LICENSE
 ├── README.md
-└── weights/
+├── mkdocs.yml
+├── pyproject.toml
+├── requirements.txt
+├── train.py
+└── yolo11n.pt
+
 ```
 
 ---
